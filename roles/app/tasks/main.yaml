@@ -1,0 +1,13 @@
+---
+- name: Copy website tarball
+  copy:
+    src: websites.tar.gz
+    dest: /tmp/websites.tar.gz
+
+- name: Extract website
+  unarchive:
+    src: /tmp/websites.tar.gz
+    dest: /var/www/html
+    remote_src: yes
+    owner: root
+    group: root

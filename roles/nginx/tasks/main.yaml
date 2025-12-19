@@ -1,0 +1,11 @@
+---
+- name:
+  yum:
+    name: nginx
+    state: present
+
+- name:
+  service:
+      name: nginx
+      state: started
+      enabled: true

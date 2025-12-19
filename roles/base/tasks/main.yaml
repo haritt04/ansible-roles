@@ -1,0 +1,32 @@
+---
+- name: Update yum cache
+  ansible.builtin.dnf:
+    update_cache: yes
+
+- name: Ensure EPEL release package is installed (RHEL/CentOS 8+)
+  ansible.builtin.dnf:
+     name: epel-release
+     state: present
+
+- name: Install basic utilities
+  ansible.builtin.dnf:
+    name:
+      - curl
+      - wget
+      - unzip
+      - vim
+      - fail2ban
+      - tar
+      - gzip
+    state: present
+
+- name: Create /var/www/html directory
+  ansible.builtin.file:
+     path: /var/www/html
+     state: directory
+
+- name: Ensure fail2ban is running
+  service:
+    name: fail2ban
+    state: started
+    enabled: true

@@ -1,0 +1,6 @@
+---
+- name: Add SSH public key
+  ansible.posix.authorized_key:
+    user: root
+    state: present
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRd7kBW8ossHOICbyCn6Uq+uBZkqzcixa9786pNRcUO root@rocky10vm"

@@ -1,0 +1,11 @@
+---
+- name: Configure Linux Server
+  hosts: servers
+  become: true
+
+  roles:
+    - { role: base, tags: ["base"] }
+    - { role: ssh, tags: ["ssh"] }
+    - { role: app, tags: ["app"] }
+    - { role: nginx, tags: ["nginx"] }
+
