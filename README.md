@@ -1,7 +1,7 @@
 # Configuration Management Project
 
 Automate Linux server setup using **Ansible**.
-https://github.com/haritt04/ansible-roles
+https://roadmap.sh/projects/configuration-management
 
 ## Overview
 Learn configuration management by creating an Ansible playbook to:
